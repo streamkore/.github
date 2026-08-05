@@ -1,10 +1,56 @@
 {
+  "$schema": "./repository-relationships.schema.json",
+  "audience": "public",
+  "generated": {
+    "complete_for_visibility": "public",
+    "generated_at": "2026-08-05T21:02:21Z",
+    "generator_version": "2026-08-04.1",
+    "inventory_digest": "sha256:9be1b9b8b7796f323921478977df087787cc47518e9e8911b0c93a04a0b395ce",
+    "managed_by": "ore-repository-relationship-rollout",
+    "omitted_repository_count": 0,
+    "private_repositories_omitted": false,
+    "source": "GitHub GraphQL repository inventory plus reviewed manual declarations"
+  },
+  "owner": {
+    "account_type": "organization",
+    "dotgithub_repository": "streamkore/.github",
+    "github_id": "311151603",
+    "linear_project": {
+      "id": "067678fd-c2a3-4d60-b240-9ef5e4f71da4",
+      "name": "github.com/streamkore",
+      "team_id": "eb8ab169-5afe-4b6f-9cab-3f2aa3e887dc",
+      "url": "https://linear.app/denman/project/githubcomstreamkore-b56684b6c8fd",
+      "workspace": "denman"
+    },
+    "login": "streamkore",
+    "mapping_id": "context:streamkore"
+  },
+  "private_registry": {
+    "contains_non_public_inventory": false,
+    "digest": "sha256:d7aa6ab72be3783afad469d45835946ea706ae3080f55078267ffdbc51ed7efd",
+    "path": "owners/streamkore.json",
+    "repository": "ORESoftware/project-registry"
+  },
+  "relationships": [],
+  "repositories": [
+    {
+      "archived": false,
+      "default_branch": "main",
+      "fork": false,
+      "full_name": "streamkore/.github",
+      "github_id": "1324046445",
+      "name": ".github",
+      "owner": "streamkore",
+      "roles": [
+        "community-health",
+        "governance",
+        "relationship-registry"
+      ],
+      "source": "github-graphql-api",
+      "url": "https://github.com/streamkore/.github",
+      "visibility": "public"
+    }
+  ],
   "schema_version": 1,
-  "organization": "streamkore",
-  "generated_at": null,
-  "repositories": [],
-  "notes": [
-    "Populate from live GitHub inventory; do not infer unverified dependencies.",
-    "Repository-local manifests remain authoritative for exact dependency versions."
-  ]
+  "unresolved_hints": []
 }
