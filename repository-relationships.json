@@ -29,7 +29,7 @@
     "contains_non_public_inventory": false,
     "digest": "sha256:d7aa6ab72be3783afad469d45835946ea706ae3080f55078267ffdbc51ed7efd",
     "path": "owners/streamkore.json",
-    "repository": "ORESoftware/project-registry"
+    "repository": "approved-private-registry"
   },
   "relationships": [],
   "repositories": [
