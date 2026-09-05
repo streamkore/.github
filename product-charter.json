@@ -1,0 +1,47 @@
+{
+  "$schema": "./product-charter.schema.json",
+  "schema_version": 1,
+  "organization": "streamkore",
+  "status": "unresolved",
+  "canonical_linear_project": "github.com/streamkore",
+  "decision_issue": "DEN-1869",
+  "approved_repositories": [
+    "streamkore/.github"
+  ],
+  "product_definition": null,
+  "target_users": [],
+  "workflows": [],
+  "measurable_outcomes": [],
+  "vertical_slices": [],
+  "security": {
+    "data_classes": [],
+    "identity_and_authorization": [],
+    "external_integrations": [],
+    "trust_boundaries": [],
+    "retention_and_privacy": [],
+    "abuse_cases": [],
+    "prohibited_uses": []
+  },
+  "architecture": {
+    "runtime_shape": null,
+    "interface_strategy": null,
+    "persistence_model": null,
+    "observability_baseline": null,
+    "offline_or_background_requirements": null
+  },
+  "prohibited_assumptions": [
+    "Do not infer a streaming, media, messaging, or infrastructure domain from the streamkore brand name.",
+    "Keep the organization registry limited to streamkore/.github until the charter is approved.",
+    "Do not create application services, clients, infrastructure, or cross-organization dependencies from naming similarity alone."
+  ],
+  "evidence": {
+    "reviewed_sources": [],
+    "required_before_approval": [
+      "named real users and concrete workflows",
+      "measurable outcomes and explicit non-goals",
+      "security, privacy, abuse, and prohibited-use boundaries",
+      "two independently verifiable vertical slices",
+      "an approved minimal repository map derived from those slices"
+    ]
+  }
+}
