@@ -1,0 +1,80 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/streamkore/.github/blob/main/product-charter.schema.json",
+  "title": "streamkore product charter gate",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "$schema",
+    "schema_version",
+    "organization",
+    "status",
+    "canonical_linear_project",
+    "decision_issue",
+    "approved_repositories",
+    "product_definition",
+    "target_users",
+    "workflows",
+    "measurable_outcomes",
+    "vertical_slices",
+    "security",
+    "architecture",
+    "prohibited_assumptions",
+    "evidence"
+  ],
+  "properties": {
+    "$schema": {"const": "./product-charter.schema.json"},
+    "schema_version": {"const": 1},
+    "organization": {"const": "streamkore"},
+    "status": {"enum": ["unresolved", "approved", "archived"]},
+    "canonical_linear_project": {"const": "github.com/streamkore"},
+    "decision_issue": {"type": "string", "pattern": "^DEN-[0-9]+$"},
+    "approved_repositories": {
+      "type": "array",
+      "minItems": 1,
+      "uniqueItems": true,
+      "items": {"type": "string", "pattern": "^streamkore/[^/]+$"}
+    },
+    "product_definition": {"type": ["string", "null"]},
+    "target_users": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "workflows": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "measurable_outcomes": {"type": "array", "items": {"type": "string", "minLength": 1}},
+    "vertical_slices": {"type": "array", "items": {"type": "object"}},
+    "security": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["data_classes", "identity_and_authorization", "external_integrations", "trust_boundaries", "retention_and_privacy", "abuse_cases", "prohibited_uses"],
+      "properties": {
+        "data_classes": {"type": "array", "items": {"type": "string"}},
+        "identity_and_authorization": {"type": "array", "items": {"type": "string"}},
+        "external_integrations": {"type": "array", "items": {"type": "string"}},
+        "trust_boundaries": {"type": "array", "items": {"type": "string"}},
+        "retention_and_privacy": {"type": "array", "items": {"type": "string"}},
+        "abuse_cases": {"type": "array", "items": {"type": "string"}},
+        "prohibited_uses": {"type": "array", "items": {"type": "string"}}
+      }
+    },
+    "architecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["runtime_shape", "interface_strategy", "persistence_model", "observability_baseline", "offline_or_background_requirements"],
+      "properties": {
+        "runtime_shape": {"type": ["string", "null"]},
+        "interface_strategy": {"type": ["string", "null"]},
+        "persistence_model": {"type": ["string", "null"]},
+        "observability_baseline": {"type": ["string", "null"]},
+        "offline_or_background_requirements": {"type": ["string", "null"]}
+      }
+    },
+    "prohibited_assumptions": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1}},
+    "evidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["reviewed_sources", "required_before_approval"],
+      "properties": {
+        "reviewed_sources": {"type": "array", "items": {"type": "string"}},
+        "required_before_approval": {"type": "array", "minItems": 1, "items": {"type": "string"}}
+      }
+    }
+  }
+}
