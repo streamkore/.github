@@ -1,0 +1,35 @@
+name: product charter gate
+
+on:
+  pull_request:
+    paths:
+      - product-charter.json
+      - product-charter.schema.json
+      - .github/scripts/validate_product_charter.py
+      - .github/workflows/product-charter.yml
+  push:
+    branches: [main]
+    paths:
+      - product-charter.json
+      - product-charter.schema.json
+      - .github/scripts/validate_product_charter.py
+      - .github/workflows/product-charter.yml
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+        with:
+          persist-credentials: false
+      - name: Validate charter JSON
+        run: python3 -m json.tool product-charter.json >/dev/null
+      - name: Validate charter schema JSON
+        run: python3 -m json.tool product-charter.schema.json >/dev/null
+      - name: Enforce fail-closed charter state
+        run: python3 .github/scripts/validate_product_charter.py
